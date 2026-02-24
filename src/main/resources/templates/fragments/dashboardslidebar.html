@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DashboardSlide</title>
+    <title></title>
 </head>
 <body>
 <div th:fragment="dashboard">
     <ul>
-        <li>Login</li>
-        <li>SignUp</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Admin</li>
+        <li><a th:href="@{/login}">Login</a></li>
+        <li><a th:href="@{/signup}">SignUp</a></li>
+        <li><a th:href="@{/about}">About</a></li>
+        <li><a th:href="@{/contact}">Contact</a></li>
+        <li><a th:href="@{/admin}">Admin</a></li>
     </ul>
 </div>
 </body>

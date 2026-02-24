@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desh Board</title>
+    <title>Dash Board</title>
+ <link rel="stylesheet" href="/Css/Dashboard.css">
+
 </head>
 <body>
-    <div th:replace="fragments/header :: header"></div>
-    <div th:replace="fragments/dashboardslidebar :: dashboard"></div>
-    <div th:replace="fragments/footer :: footer"></div>
+   <div th:replace="fragments/header :: header" ></div>
+   <div class="dashboard" id="dashboard"> <div th:replace="fragments/dashboardslidebar :: dashboard">
+
+   </div>
+       <img th:src="@{/images/todolistgif.gif}" 
+     alt="To Do Animation"
+     width="1005" height="400px">
+</div>
+
+    <div class="footer"><div th:replace="fragments/footer :: footer"></div></div>
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menu = document.getElementById("menu");
+    const dashboard = document.getElementById("dashboard");
+
+    menu.addEventListener("click", function () {
+        dashboard.classList.toggle("hide");
+    });
+
+});
+</script>
 </html>

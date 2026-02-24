@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
+<style>
+   .menu{
+    color: white;
+   }
+</style>
 </head>
 <body>
-    <div class="div" th:fragment="header">
-        <img src="/Images/logo.png" alt="" srcset="">
+
+    <div class="header" th:fragment="header">
+        <h1 class="menu" id="menu">&#9776</h1>
+        <img th:src="@{/images/logo.png}" alt="LogoTodo" title="LogoTodo" width="60">
+        <h1>Welcome To </h1>
         <h1>Todo</h1>
-        
     </div>
+
 </body>
 </html>

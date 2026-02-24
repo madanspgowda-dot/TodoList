@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+/* Google Font Feel */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main Card */
+.about-container{
+    background: #ffffff;
+    width: 85%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Headings */
+.about-container h1{
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #2c5364;
+}
+
+.about-container h2{
+    margin-top: 30px;
+    color: #203a43;
+    border-left: 5px solid #2c5364;
+    padding-left: 10px;
+}
+
+/* Paragraph */
+.about-container p{
+    line-height: 1.7;
+    color: #444;
+    font-size: 16px;
+}
+
+/* Lists */
+.about-container ul{
+    padding-left: 20px;
+}
+
+.about-container ul li{
+    margin-bottom: 10px;
+    color: #333;
+    transition: 0.3s;
+}
+
+.about-container ul li:hover{
+    transform: translateX(5px);
+    color: #2c5364;
+}
+
+/* Back Button */
+button{
+    padding: 10px 25px;
+    background: #2c5364;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+}
+
+button:hover{
+    background: #203a43;
+    transform: translateX(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+button a{
+    color: white;
+    text-decoration: none;
+}
+
+/* Fade Animation */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    </style>
+</head>
+<body>
+    
+    <section class="about-container">
+        <button><a th:href="@{/}">&#8592;Back</a></button>
+    <h1>About Me</h1>
+
+    <p>
+        Hello! I am <strong>Madan Gowda S P</strong>, a passionate and dedicated software developer 
+        with a strong foundation in Java, Python, and Web Technologies. 
+        I am committed to building innovative, efficient, and scalable software solutions 
+        that solve real-world problems.
+    </p>
+
+    <h2>Career Objective</h2>
+    <p>
+        To obtain a challenging position in the field of software development where I can 
+        utilize my programming skills in Java, Python, and web technologies to design 
+        innovative solutions, contribute to organizational growth, and continuously 
+        enhance my technical expertise.
+    </p>
+
+    <h2>Education</h2>
+    <ul>
+        <li>
+            <strong>Master of Computer Application (MCA)</strong><br>
+            VTU, Belagavi – 8.6 CGPA (2025)
+        </li>
+        <li>
+            <strong>Bachelor of Computer Applications (BCA)</strong><br>
+            Mandya University – 7.35 CGPA (2023)
+        </li>
+    </ul>
+
+    <h2>Technical Skills</h2>
+    <ul>
+        <li><strong>Programming Languages:</strong> C, Java, Python</li>
+        <li><strong>Web Technologies:</strong> HTML, CSS, JavaScript</li>
+        <li><strong>Tools & Interests:</strong> Data Analysis using Python, Machine Learning, IoT</li>
+    </ul>
+
+    <h2>Projects</h2>
+    <ul>
+        <li>Intelligent Traffic Monitoring System using TensorFlow (Machine Learning)</li>
+        <li>Socio-Economic Indicators Detection using Geospatial ML Analysis (MCA Main Project)</li>
+        <li>Automated Locking System using LDR Sensor (Internship Project)</li>
+        <li>Smart Locker (IoT Mini Project)</li>
+        <li>Grow Wise Academy (Societal Project)</li>
+    </ul>
+
+    <h2>Certifications</h2>
+    <ul>
+        <li>Cyber Security and Privacy – NPTEL (12 Weeks)</li>
+        <li>IoT and Robotics – TechnoAnveshana Pvt Ltd (1 Month)</li>
+    </ul>
+
+    <h2>Connect With Me</h2>
+    <p>
+        📧 Email: madangowdasp1@gmail.com <br>
+        📞 Phone: +91 7996487067 <br>
+        🔗 LinkedIn: linkedin.com/in/madan-gowda-s-p <br>
+        💻 GitHub: github.com/madanspgowda-dot
+    </p>
+</section>
+</body>
+</html>
