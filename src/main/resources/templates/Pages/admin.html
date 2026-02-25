@@ -8,35 +8,68 @@
         #tablecontact{
             display:none;
         }
+        #tablesignup{
+            display:none;
+        }
     </style>
 </head>
 <body>
-    <button><a th:href="@{/contact}">ContactList</a></button>
-    <button id="list">Contact List</button>
-    <table border="1" id="tablecontact">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Message</th>
-            <th>Date</th>
-            <th>Time</th>
-        </tr>
-      <tr th:each="contact : ${contactlist}">
-    <td th:text="${contact.id}"></td>
-    <td th:text="${contact.name}"></td>
-    <td th:text="${contact.email}"></td>
-    <td th:text="${contact.message}"></td>
-    <td th:text="${contact.date}"></td>
-    <td th:text="${contact.time}"></td>
-</tr>
-    </table>
-</body>
+
+<button id="list">Contact List</button>
+<button id="signuplist">SignUp List</button>
+
+<table border="1" id="tablecontact">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+        <th>Date</th>
+        <th>Time</th>
+    </tr>
+
+    <tr th:each="contact : ${contactlist}">
+        <td th:text="${contact.id}"></td>
+        <td th:text="${contact.name}"></td>
+        <td th:text="${contact.email}"></td>
+        <td th:text="${contact.message}"></td>
+        <td th:text="${contact.date}"></td>
+        <td th:text="${contact.time}"></td>
+    </tr>
+</table>
+
+<table border="1" id="tablesignup">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+
+    <tr th:each="signup : ${signuplist}">
+        <td th:text="${signup.id}"></td>
+        <td th:text="${signup.name}"></td>
+        <td th:text="${signup.email}"></td>
+        <td th:text="${signup.password}"></td>
+    </tr>
+</table>
+
 <script>
-    const contactlist=document.getElementById("list");
-    contactlist.addEventListener("click",()=>{
-        const tablecontact=document.getElementById("tablecontact");
-        tablecontact.style.display="block";
-    })
+    const contactBtn = document.getElementById("list");
+    const signupBtn = document.getElementById("signuplist");
+
+    const contactTable = document.getElementById("tablecontact");
+    const signupTable = document.getElementById("tablesignup");
+
+    contactBtn.addEventListener("click", () => {
+        contactTable.style.display = "block";
+        signupTable.style.display = "none";
+    });
+
+    signupBtn.addEventListener("click", () => {
+        signupTable.style.display = "block";
+        contactTable.style.display = "none";
+    });
 </script>
+
+</body>
 </html>

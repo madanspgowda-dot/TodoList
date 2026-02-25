@@ -80,11 +80,14 @@ button:hover{
 <body>
 
 <div class="container">
+    <h1 th:text="${Success}"></h1>
+    <h1 th:text="${error}"></h1>
     <h2>Create Account</h2>
-    <form th:action="@{/signup}" method="post">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <input type="password" name="password" placeholder="Password" required>
+
+    <form th:action="@{/signup}" method="post" th:object="${signupdetails}">
+        <input type="text" th:field="*{name}" placeholder="Full Name" required>
+        <input type="email" th:field="*{email}" placeholder="Email Address" required>
+        <input type="password" th:field="*{password}"  required>
         <button type="submit">Sign Up</button>
     </form>
 
