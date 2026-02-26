@@ -1,6 +1,6 @@
 package com.example.TodoList.Controller;
 
-import com.example.TodoList.Entity.SignUpEntity;
+
 import com.example.TodoList.Services.SignUpServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +30,7 @@ public String loginUser(@RequestParam String email,
 
     if (isValid) {
 
-        return "/TodoPage";
+        return "redirect:/todolistpage";
     } else {
         model.addAttribute("error", "Invalid Email or Password");
         return "Pages/login";
