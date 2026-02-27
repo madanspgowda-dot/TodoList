@@ -11,12 +11,16 @@
         #tablesignup{
             display:none;
         }
+        #tabletodo{
+            display:none;
+        }
     </style>
 </head>
 <body>
 
 <button id="list">Contact List</button>
 <button id="signuplist">SignUp List</button>
+<button id="todopagelist">TodoPage List</button>
 
 <table border="1" id="tablecontact">
     <tr>
@@ -52,7 +56,42 @@
         <td th:text="${signup.password}"></td>
     </tr>
 </table>
+<table border="1" id="tabletodo">
+    <tr>
+        <th th:text="${message}"></th>
+    </tr>
+    <tr>
+        <th>ID</th>
+        <th>Company</th>
+        <th>Location</th>
+        <th>Description</th>
+        <th>Link</th>
+        <th>Date</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
 
+    <tr th:each="todo : ${todopagelist}">
+        <td th:text="${todo.id}"></td>
+        <td th:text="${todo.company}"></td>
+        <td th:text="${todo.location}"></td>
+        <td th:text="${todo.description}"></td>
+        
+           <td>
+    <a th:href="${#strings.startsWith(todo.link,'http') 
+        ? todo.link 
+        : 'https://' + todo.link}"
+       target="_blank">
+        View Link
+    </a>
+</td>
+        <td th:text="${todo.date}"></td>
+         <td><a th:href="@{/admin/delete/{id}(id=${todo.id})}"><Button>Delete</Button></a></td>
+         <td><a th:href="@{/admin/edit/{id}(id=${todo.id})}"><Button>Edit</Button></a></td>
+    </tr>
+</table>
+<a th:href="@{/contact}"><button>Contact Page</button></a>
+<a th:href="@{/todolistpage}"><button>Todo List Page</button></a>
 <script>
     const contactBtn = document.getElementById("list");
     const signupBtn = document.getElementById("signuplist");
@@ -69,6 +108,21 @@
         signupTable.style.display = "block";
         contactTable.style.display = "none";
     });
+    
+    const todoPageBtn = document.getElementById("todopagelist");
+    const todoPageTable = document.getElementById("tabletodo");
+
+    todoPageBtn.addEventListener("click", () => {
+        todoPageTable.style.display = "block";
+        contactTable.style.display = "none";
+        signupTable.style.display = "none";
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+    const message = "[[${message}]]";
+    if (message) {
+        todoPageTable.style.display = "block";
+    }
+});
 </script>
 
 </body>
